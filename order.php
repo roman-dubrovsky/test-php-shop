@@ -1,8 +1,8 @@
 <?php
 
-$shop_id = 1;
-$product_id = 1;
-$token = "6b92580f49763693391b5a1de86c5c65";
+$shop_id = 28;
+$product_id = 29;
+$token = "fd8cd15ffdd90fe58188f297401e604c";
 
 $order = array( 
   "contact_information" => array(
