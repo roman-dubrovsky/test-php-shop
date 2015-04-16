@@ -28,7 +28,7 @@ $order = array(
 
 class UpnApi {
   private $authToken = '6b92580f49763693391b5a1de86c5c65';
-  private $api_url = 'https://188.166.16.61/api/shops/v1/shops/';
+  private $api_url = 'http://188.166.16.61/api/shops/v1/shops/';
 
   function __construct($authToken, $shop_id) {
     $this->authToken = $authToken;
