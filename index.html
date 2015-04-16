@@ -35,6 +35,52 @@
 </head>
 
 <body>
+
+    <script type="text/javascript">
+        var UrlUtil = {
+          fetchParam: function (source, name, delimiter) {
+              var param;
+              var params = source.split(delimiter);
+              for (var i = 0, length = params.length; i < length; ++i) {
+                  param = params[i].replace(/^\s+|\s+$/g, "");
+                  if (param.indexOf(name + "=") == 0) {
+                      return param.substr(name.length + 1);
+                  }
+              }
+              return null;
+          },
+
+          getParam: function (name) {
+              if (!location || !location.search) {
+                  return null;
+              }
+              var queryIndex = location.search.indexOf("?");
+              var fragmentIndex = location.search.indexOf("#");
+              if (fragmentIndex == -1) {
+                  fragmentIndex = location.search.length;
+              }
+              var query = location.search.substring(queryIndex + 1, fragmentIndex);
+              return UrlUtil.fetchParam(query, name, "&");
+          }
+        };
+
+        var CookieUtil = {
+            setCookie: function (cname, cvalue, exdays) {
+              var d = new Date();
+              d.setTime(d.getTime() + (exdays*24*60*60*1000));
+              var expires = "expires="+d.toUTCString();
+              document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+            }
+        };
+
+
+        if (UrlUtil.getParam("utm_source")) {
+          CookieUtil.setCookie("webmaster_personal_key", UrlUtil.getParam("utm_source"), 365);
+        }
+    </script>
+    
+    <!-- Fucking code starting here -->
+
     <div class="container">
 
         <div id="block17">
