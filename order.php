@@ -75,6 +75,6 @@ class UpnApi {
 $client = new UpnApi($token, $shop_id);
 $client->createOrder($order);
 
-header('Location: /result.html');
+header('Location: /index.html');
 die();
 ?>
