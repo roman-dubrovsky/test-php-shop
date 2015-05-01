@@ -1,8 +1,6 @@
 <?php
 
-$shop_id = 28;
-$product_id = 29;
-$token = "fd8cd15ffdd90fe58188f297401e604c";
+require 'config.php';
 
 $order = array( 
   "contact_information" => array(
@@ -27,12 +25,10 @@ $order = array(
 
 
 class UpnApi {
-  private $authToken = '6b92580f49763693391b5a1de86c5c65';
-  private $api_url = 'http://188.166.16.61/api/shops/v1/shops/';
-
-  function __construct($authToken, $shop_id) {
+  function __construct($authToken, $shop_id, $api_url) {
     $this->authToken = $authToken;
     $this->shop_id = $shop_id;
+    $this->api_url = $api_url;
   }
 
   function createOrder($params) {
@@ -72,9 +68,11 @@ class UpnApi {
     }
 }
 
-$client = new UpnApi($token, $shop_id);
+$client = new UpnApi($token, $shop_id, $api_url);
 $client->createOrder($order);
 
-header('Location: /index.html');
+$message = "Спасибо за покупку";
+echo "<script type='text/javascript'>alert('$message');</script>";
+header('refresh:0; url=index.html');
 die();
 ?>
