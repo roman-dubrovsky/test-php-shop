@@ -71,7 +71,7 @@ class UpnApi {
 $client = new UpnApi($token, $shop_id, $api_url);
 $client->createOrder($order);
 
-$message = "Спасибо за покупку";
+$message = "Ваш заказ принят. Спасибо за покупку!";
 echo "<script type='text/javascript'>alert('$message');</script>";
 header('refresh:0; url=index.html');
 die();
