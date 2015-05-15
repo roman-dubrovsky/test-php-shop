@@ -21,7 +21,8 @@ $order = array(
   ),
   "referal" => array(
     "webmaster_personal_key" => $_COOKIE["webmaster_personal_key"]
-  )
+  ),
+  "params_string" => $_COOKIE['params_string']
 );
 
 
