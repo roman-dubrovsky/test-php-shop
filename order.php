@@ -20,7 +20,7 @@ $order = array(
     )
   ),
   "referal" => array(
-    "webmaster_personal_key" => $_COOKIE["webmaster_personal_key"]
+    "stream_key" => $_COOKIE["stream_key"]
   ),
   "params_string" => $_COOKIE['params_string']
 );
