@@ -3,6 +3,18 @@
 error_reporting(0);
 require 'config.php';
 
+function get_client_ip() {
+    $ip = '';
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
 $order = array( 
   "contact_information" => array(
     "name" => $_POST["name"],
@@ -22,7 +34,8 @@ $order = array(
   "referal" => array(
     "stream_key" => $_COOKIE["stream_key"]
   ),
-  "params_string" => $_COOKIE['params_string']
+  "params_string" => $_COOKIE['params_string'],
+  "ip" => get_client_ip()
 );
 
 
