@@ -58,7 +58,7 @@ class UpnApi {
       curl_setopt_array($curl, array(
         CURLOPT_RETURNTRANSFER => 1,
         CURLOPT_URL => $url.$action,
-        CURLOPT_USERAGENT => 'UpnApi v1.1',
+        CURLOPT_USERAGENT => 'UpnApi v2.0',
         CURLOPT_POST => 1,
         CURLOPT_POSTFIELDS => $this->jsonData($params),
         CURLOPT_HTTPHEADER => array(
