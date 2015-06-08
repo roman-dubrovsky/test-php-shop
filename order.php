@@ -34,8 +34,12 @@ $order = array(
   "referal" => array(
     "stream_key" => $_COOKIE["stream_key"]
   ),
+  "session_information" => array(
+    "time_token" => $_COOKIE['auth_token'],
+    "ip" => get_client_ip()
+  ),
   "params_string" => $_COOKIE['params_string'],
-  "ip" => get_client_ip()
+  
 );
 
 
@@ -58,7 +62,7 @@ class UpnApi {
       curl_setopt_array($curl, array(
         CURLOPT_RETURNTRANSFER => 1,
         CURLOPT_URL => $url.$action,
-        CURLOPT_USERAGENT => 'UpnApi v2.0',
+        CURLOPT_USERAGENT => 'UpnApi v2.1',
         CURLOPT_POST => 1,
         CURLOPT_POSTFIELDS => $this->jsonData($params),
         CURLOPT_HTTPHEADER => array(
