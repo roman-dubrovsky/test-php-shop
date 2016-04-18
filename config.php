@@ -1,6 +1,6 @@
 <?php
-  $shop_id = 34;
-  $product_id = 34;
-  $token = "ef0aeb6f2bfba13b5fcd929b71749c10";
-  $api_url = 'http://upn-staging.ru/api/shops/v2/shops/';
+  $shop_id = 68;
+  $product_id = 68;
+  $token = "f6ac995b2fdb66987603eeffcc01f0c2";
+  $api_url = 'http://upnetwork.ru/api/shops/v2/shops/';
 ?>
